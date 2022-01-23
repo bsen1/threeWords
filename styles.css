@@ -1,0 +1,162 @@
+:root {
+    background-color: rgb(18,18,19);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Outfit', sans-serif;
+}
+
+.header {
+    display:flex;
+    flex-wrap:nowrap;
+    color: rgb(195,197,199);
+    font-size: 1rem;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.footer {
+    display:flex;
+    justify-content:end;
+    align-items:flex-end;
+    color: rgb(50,50,50);
+}
+
+.words {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(5, 75px);
+    grid-template-rows: repeat(3, 75px);
+    justify-content: center;
+    row-gap: 50px;
+}
+
+
+button {
+    font-size: 2em;
+    color: rgb(195,197,199);
+    background-color: rgb(18,18,19);
+    border: 1px solid rgb(39,39,40);
+    border-radius: 5px;
+    height: 75px;
+    width: 75px;
+    padding: 0px;
+}
+
+@media (min-width: 768px) {
+    button:hover {
+        border: 5px solid rgb(3, 83, 3);
+    }
+}
+
+button:active {
+    background-color:rgb(100,100,100);
+}
+
+.letters {
+    border: 3px solid blue;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 6%;
+    justify-content: center;
+}
+
+
+
+.selected, .selected:hover {
+    border: 5px solid rgb(70, 207, 70);
+}
+
+.static {
+    color: red;
+}
+
+#submitButton {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.share, .share:hover, .share:active {
+    background-color: green;
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 5%;
+    height: auto;
+    width: auto;
+    font-size: 1.75rem;
+    padding: 0.5rem 1rem;
+}
+
+
+.correct {
+    background-color: rgb(83,141,78);
+}
+
+/* CSS */
+.button-40 {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: #374151;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-40 {
+    padding: .75rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+    .letter {
+        height: 50px;
+        width: 50px;
+    }
+
+    button {
+        height: 75px;
+        width: 50px;
+    }
+
+    .word1, .word2, .word3 {
+        margin-right:auto;
+        margin-left:auto;
+    }
+
+    .words {
+        row-gap: 35px;
+    }
+
+}
+
