@@ -979,6 +979,7 @@ const answers = [
     'hunts',
     'husky',
     'hyena',
+    'hymns',
     'hyped',
     'hyper',
     'hypes',
@@ -2152,7 +2153,6 @@ const answers = [
     'zooms',
   ]
   
-
 let answer = [answers[Math.floor(Math.random()*answers.length)].toUpperCase(), answers[Math.floor(Math.random()*answers.length)].toUpperCase(), answers[Math.floor(Math.random()*answers.length)].toUpperCase()];
 if(getParameters("a1") && getParameters("a2") && getParameters("a3")) {
     answer[0] = answers[getParameters("a1")].toUpperCase();
@@ -2276,7 +2276,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (w1 === "Correct" && w2===w1 && w3===w1) {
-            alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\nGood Job!\n Completed in ${checks} checks`);
+            if(checks <= 3)
+                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\n Completed in ${checks} checks\nGood Job! 👍`);
+            else
+                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\n Completed in ${checks} checks\nYou can do better. 🤷‍♂️`);
             document.querySelector("#submit").disabled = true;
         }
         else
@@ -2315,11 +2318,9 @@ function shuffle(array) {
   }
 
   function anagrams (word) {
-    word = word.slice(1,4).split("").sort().join("");
-    console.log(word);
+    word = word.split("").sort().join("");
     for(let i = 0; i < answer.length; i++) {
-        let ans = answer[i].slice(1,4).split("").sort().join("");
-        console.log(ans);
+        let ans = answer[i].split("").sort().join("");
         if(word === ans)
             return true;
     }

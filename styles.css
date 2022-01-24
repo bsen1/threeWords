@@ -13,6 +13,10 @@
     align-content: center;
 }
 
+a, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: rgb(195,197,199);
+}
 
 .footer {
     display:flex;
@@ -87,8 +91,13 @@ button:active {
     left: 5%;
     height: auto;
     width: auto;
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     padding: 0.5rem 1rem;
+}
+
+.shareLogo {
+    width: 2rem;
+    height: auto;
 }
 
 
