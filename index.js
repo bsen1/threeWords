@@ -2277,9 +2277,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (w1 === "Correct" && w2===w1 && w3===w1) {
             if(checks <= 3)
-                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\n Completed in ${checks} checks\nGood Job! 👍`);
+                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\nCompleted in ${checks} checks\nGood Job! 👍`);
             else
-                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\n Completed in ${checks} checks\nYou can do better. 🤷‍♂️`);
+                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\nCompleted in ${checks} checks\nYou can do better. 🤷‍♂️`);
             document.querySelector("#submit").disabled = true;
         }
         else
