@@ -84,6 +84,7 @@ button:active {
 
 .share, .share:hover, .share:active {
     background-color: green;
+    color: rgb(240,240,240);
     border-radius: .75rem;
     display: flex;
     align-items: center;
