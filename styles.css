@@ -7,7 +7,7 @@
 .header {
     display:flex;
     flex-wrap:nowrap;
-    color: rgb(195,197,199);
+    color: rgb(240,240,240);
     font-size: 1rem;
     justify-content: center;
     align-content: center;
@@ -15,7 +15,7 @@
 
 a, a:hover, a:active, a:focus {
     text-decoration: none;
-    color: rgb(195,197,199);
+    color: rgb(240,240,240);
 }
 
 .footer {
@@ -37,7 +37,7 @@ a, a:hover, a:active, a:focus {
 
 button {
     font-size: 2em;
-    color: rgb(195,197,199);
+    color: rgb(200,200,200);
     background-color: rgb(18,18,19);
     border: 1px solid rgb(39,39,40);
     border-radius: 5px;
