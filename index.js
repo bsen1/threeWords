@@ -2152,7 +2152,7 @@ const answers = [
     'zones',
     'zooms',
   ]
-  
+
 let answer = [answers[Math.floor(Math.random()*answers.length)].toUpperCase(), answers[Math.floor(Math.random()*answers.length)].toUpperCase(), answers[Math.floor(Math.random()*answers.length)].toUpperCase()];
 if(getParameters("a1") && getParameters("a2") && getParameters("a3")) {
     answer[0] = answers[getParameters("a1")].toUpperCase();
@@ -2169,6 +2169,8 @@ for(let i = 0; i < 3; i++)
 
 let startLetters = shuffle(answerLetters);
 document.addEventListener("DOMContentLoaded", () => {
+
+    let modal = document.getElementById("myModal");
 
     let word1 = document.querySelectorAll(".word1");
     word1[0].innerHTML = answer[0].slice(0, 1);
@@ -2277,13 +2279,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (w1 === "Correct" && w2===w1 && w3===w1) {
             if(checks <= 3)
-                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\nCompleted in ${checks} checks\nGood Job! 👍`);
+                document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}<br>Completed in ${checks} checks<br>Good Job! 👍`;
             else
-                alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}\nCompleted in ${checks} checks\nYou can do better. 🤷‍♂️`);
+                document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}<br>Completed in ${checks} checks<br>You can do better. 🤷‍♂️`;
+            document.getElementById("title1").classList.add("green");
             document.querySelector("#submit").disabled = true;
         }
         else
-            alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}`);
+            document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}`;
+            //alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}`);
+        modal.style.display = "block";
         
     }
 
@@ -2291,6 +2296,25 @@ document.addEventListener("DOMContentLoaded", () => {
         navigator.clipboard.writeText(shareLink);
         alert("Challenge Link Copied to Clipboard ✅");
     }
+
+
+ 
+    document.getElementById("close").onclick = () => {
+        modal.style.display = "none";
+    }
+    
+    window.onclick = (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      document.addEventListener("touchstart", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    
 });
 
 
