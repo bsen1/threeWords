@@ -222,5 +222,4 @@ button:active {
     rgba(255, 0, 0, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.2em;
   }
