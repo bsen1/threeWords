@@ -2294,7 +2294,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector(".share").onclick = () => {
         navigator.clipboard.writeText(shareLink);
-        alert("Challenge Link Copied to Clipboard ✅");
+        document.getElementById("modalInfo").innerHTML = "Challenge Link Copied to Clipboard ✅";
+        modal.style.display = "block";
     }
 
 
