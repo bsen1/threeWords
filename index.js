@@ -2309,7 +2309,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      document.addEventListener("touchstart", (event) => {
+      document.addEventListener("click", (event) => {
         if (event.target == modal) {
           modal.style.display = "none";
         }
