@@ -10,7 +10,12 @@
     color: rgb(240,240,240);
     font-size: 1rem;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+}
+
+.info {
+    position: relative;
+    left: 100px;
 }
 
 a, a:hover, a:active, a:focus {
@@ -94,6 +99,7 @@ button:active {
     width: auto;
     font-size: 1.3rem;
     padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 .shareLogo {
@@ -223,4 +229,24 @@ button:active {
     rgba(255, 0, 0, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .wrong {
+      color: red;
+  }
+
+  .right {
+      color: green;
+  }
+
+  .almost {
+      color:rgb(182, 117, 20);
+  }
+
+  .info {
+      cursor: pointer;
+  }
+
+  .mini {
+      font-size: 1.1rem;
   }

@@ -2217,20 +2217,20 @@ document.addEventListener("DOMContentLoaded", () => {
         checks++;
 
         let result = "";
-        let w1 = "Incorrect", w2 = "Incorrect", w3 = "Incorrect";
+        let w1 = "<span class='wrong'>Incorrect</span>", w2 = "<span class='wrong'>Incorrect</span>", w3 = "<span class='wrong'>Incorrect</span>";
         for(let i = 0; i < word1.length; i++) {
             result += word1[i].innerHTML;
         }
 
         if (answer.includes(result)) {
-            w1 = "Correct";
+            w1 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word1.length; j++) {
                 word1[j].classList.add("correct");
                 word1[j].disabled = true;
             }
         }
         else if(anagrams(result)) {
-            w1 = "Right Letters, Wrong Order";
+            w1 = "<span class='almost'>Right Letters, Wrong Order</span>";
         }
         else
             for(let j = 0; j < word1.length; j++)
@@ -2243,14 +2243,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (answer.includes(result)) {
-            w2 = "Correct";
+            w2 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word2.length; j++) {
                 word2[j].classList.add("correct");
                 word2[j].disabled = true;
             }
         }
         else if(anagrams(result)) {
-            w2 = "Right Letters, Wrong Order";
+            w2 = "<span class='almost'>Right Letters, Wrong Order</span>";
         }
         else
             for(let j = 0; j < word2.length; j++)
@@ -2263,21 +2263,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (answer.includes(result)) {
-            w3 = "Correct";
+            w3 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word3.length; j++) {
                 word3[j].classList.add("correct");
                 word3[j].disabled = true;
             }
         }
         else if(anagrams(result)) {
-            w3 = "Right Letters, Wrong Order";
+            w3 = "<span class='almost'>Right Letters, Wrong Order</span>";
         }
         else
             for(let j = 0; j < word3.length; j++)
                 word3[j].classList.remove("correct");
 
 
-        if (w1 === "Correct" && w2===w1 && w3===w1) {
+        if (w1 === "<span class='right'>Correct</span>" && w2===w1 && w3===w1) {
             if(checks <= 3)
                 document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}<br>Completed in ${checks} checks<br>Good Job! 👍`;
             else
@@ -2315,6 +2315,11 @@ document.addEventListener("DOMContentLoaded", () => {
           modal.style.display = "none";
         }
       });
+
+      document.querySelector(".info").onclick = () => {
+          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*There is only one intended solution, other valid solutions will not work.</span>"
+          modal.style.display = "block";
+      }
     
 });
 
