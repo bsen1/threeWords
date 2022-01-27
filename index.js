@@ -2317,7 +2317,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".info").onclick = () => {
-          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*There is only one intended solution, other valid solutions will not work.</span>"
+          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*There is only one intended solution, not all valid solutions will work.</span>"
           modal.style.display = "block";
       }
     
