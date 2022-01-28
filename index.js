@@ -2222,16 +2222,16 @@ document.addEventListener("DOMContentLoaded", () => {
             result += word1[i].innerHTML;
         }
 
-        if (answer.includes(result)) {
+        if (answer.includes(result) || anagrams(result)) {
             w1 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word1.length; j++) {
                 word1[j].classList.add("correct");
                 word1[j].disabled = true;
             }
         }
-        else if(anagrams(result)) {
+        /*else if(anagrams(result)) {
             w1 = "<span class='almost'>Right Letters, Wrong Order</span>";
-        }
+        }*/
         else
             for(let j = 0; j < word1.length; j++)
                 word1[j].classList.remove("correct");
@@ -2317,7 +2317,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".info").onclick = () => {
-          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*There is only one intended solution, not all valid solutions will work.</span>"
+          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*There is only one intended solution, other valid solutions will not work.</span>"
           modal.style.display = "block";
       }
     
@@ -2348,10 +2348,11 @@ function shuffle(array) {
   }
 
   function anagrams (word) {
+    let temp = word;
     word = word.split("").sort().join("");
     for(let i = 0; i < answer.length; i++) {
         let ans = answer[i].split("").sort().join("");
-        if(word === ans)
+        if(word === ans || answers.includes(temp.toLowerCase()))
             return true;
     }
     return false;
