@@ -2352,7 +2352,7 @@ function shuffle(array) {
     word = word.split("").sort().join("");
     for(let i = 0; i < answer.length; i++) {
         let ans = answer[i].split("").sort().join("");
-        if(word === ans || answers.includes(temp.toLowerCase()))
+        if(word === ans && answers.includes(temp.toLowerCase()))
             return true;
     }
     return false;
