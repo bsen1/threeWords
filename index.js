@@ -2242,16 +2242,16 @@ document.addEventListener("DOMContentLoaded", () => {
             result += word2[i].innerHTML;
         }
 
-        if (answer.includes(result)) {
+        if (answer.includes(result) || anagrams(result)) {
             w2 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word2.length; j++) {
                 word2[j].classList.add("correct");
                 word2[j].disabled = true;
             }
         }
-        else if(anagrams(result)) {
+        /*else if(anagrams(result)) {
             w2 = "<span class='almost'>Right Letters, Wrong Order</span>";
-        }
+        }*/
         else
             for(let j = 0; j < word2.length; j++)
                 word2[j].classList.remove("correct");
@@ -2262,16 +2262,16 @@ document.addEventListener("DOMContentLoaded", () => {
             result += word3[i].innerHTML;
         }
 
-        if (answer.includes(result)) {
+        if (answer.includes(result) || anagrams(result)) {
             w3 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word3.length; j++) {
                 word3[j].classList.add("correct");
                 word3[j].disabled = true;
             }
         }
-        else if(anagrams(result)) {
+        /*else if(anagrams(result)) {
             w3 = "<span class='almost'>Right Letters, Wrong Order</span>";
-        }
+        }*/
         else
             for(let j = 0; j < word3.length; j++)
                 word3[j].classList.remove("correct");
