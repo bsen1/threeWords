@@ -214,8 +214,8 @@ button:active {
     cursor: pointer;
   }
 
-  .green {
-    background: -webkit-linear-gradient(160deg,
+  .wonGame {
+    /*background: -webkit-linear-gradient(160deg,
     rgba(255, 0, 0, 1) 0%,
     rgba(255, 154, 0, 1) 10%,
     rgba(208, 222, 33, 1) 20%,
@@ -228,7 +228,15 @@ button:active {
     rgba(251, 7, 217, 1) 90%,
     rgba(255, 0, 0, 1) 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;*/
+
+    background-color: rgb(218, 101, 5);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .wonGame:hover, .wonGame:active {
+    border: 3px solid rgb(173, 80, 4);
   }
 
   .wrong {

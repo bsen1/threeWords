@@ -2282,7 +2282,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}<br>Completed in ${checks} checks<br>Good Job! 👍`;
             else
                 document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}<br>Completed in ${checks} checks<br>You can do better. 🤷‍♂️`;
-            document.getElementById("title1").classList.add("green");
+            document.getElementById("title1").classList.add("wonGame");
+            document.getElementById("title1").innerHTML = "Play Again";
             document.querySelector("#submit").disabled = true;
         }
         else
@@ -2317,7 +2318,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".info").onclick = () => {
-          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*There is only one intended solution, other valid solutions will not work.</span>"
+          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*Use the share button to challenge your friends!</span>"
           modal.style.display = "block";
       }
     
