@@ -67,69 +67,70 @@ document.addEventListener("DOMContentLoaded", () => {
     let checks = 0;
     document.querySelector("#submit").onclick = () => {
         checks++;
-
-        let result = "";
+        
+        let allWordsValid = false;
         let w1 = "<span class='wrong'>Incorrect</span>", w2 = "<span class='wrong'>Incorrect</span>", w3 = "<span class='wrong'>Incorrect</span>";
+
+        let word1String = "";
         for(let i = 0; i < word1.length; i++) {
-            result += word1[i].innerHTML;
+            word1String += word1[i].innerHTML;
         }
 
-        if (answer.includes(result) || anagrams(result)) {
+        let word2String = "";
+        for(let i = 0; i < word2.length; i++) {
+            word2String += word2[i].innerHTML;
+        }
+
+        let word3String = "";
+        for(let i = 0; i < word3.length; i++) {
+            word3String += word3[i].innerHTML;
+        }
+
+        if(validWords.includes(word1String.toLowerCase) && validWords.includes(word2String.toLowerCase) && validWords.includes(word3String.toLowerCase))
+            allWordsValid = true;
+
+        if (answer.includes(word1String) || anagrams(word1String) || allWordsValid) {
             w1 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word1.length; j++) {
                 word1[j].classList.add("correct");
                 word1[j].disabled = true;
             }
         }
-        /*else if(anagrams(result)) {
-            w1 = "<span class='almost'>Right Letters, Wrong Order</span>";
-        }*/
+
+
         else
             for(let j = 0; j < word1.length; j++)
                 word1[j].classList.remove("correct");
         
 
-        result = "";
-        for(let i = 0; i < word2.length; i++) {
-            result += word2[i].innerHTML;
-        }
-
-        if (answer.includes(result) || anagrams(result)) {
+        if (answer.includes(word2String) || anagrams(word2String) || allWordsValid) {
             w2 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word2.length; j++) {
                 word2[j].classList.add("correct");
                 word2[j].disabled = true;
             }
         }
-        /*else if(anagrams(result)) {
-            w2 = "<span class='almost'>Right Letters, Wrong Order</span>";
-        }*/
+
         else
             for(let j = 0; j < word2.length; j++)
                 word2[j].classList.remove("correct");
 
 
-        result = "";
-        for(let i = 0; i < word3.length; i++) {
-            result += word3[i].innerHTML;
-        }
 
-        if (answer.includes(result) || anagrams(result)) {
+        if (answer.includes(word3String) || anagrams(word3String) || allWordsValid) {
             w3 = "<span class='right'>Correct</span>";
             for(let j = 0; j < word3.length; j++) {
                 word3[j].classList.add("correct");
                 word3[j].disabled = true;
             }
         }
-        /*else if(anagrams(result)) {
-            w3 = "<span class='almost'>Right Letters, Wrong Order</span>";
-        }*/
+
         else
             for(let j = 0; j < word3.length; j++)
                 word3[j].classList.remove("correct");
 
 
-        if (w1 === "<span class='right'>Correct</span>" && w2===w1 && w3===w1) {
+        if ((w1 === "<span class='right'>Correct</span>" && w2===w1 && w3===w1) || allWordsValid) {
             if(checks <= 3)
                 document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}<br>Completed in ${checks} checks<br>Good Job! 👍`;
             else
@@ -140,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         else
             document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}`;
-            //alert(`Word 1: ${w1}\nWord 2: ${w2}\nWord 3: ${w3}`);
         modal.style.display = "block";
         
     }
@@ -217,3 +217,7 @@ function httpGet(theUrl) {
     xmlHttp.send(null);
     return xmlHttp.responseText;
   }
+
+function isValid(word) {
+    return validWords.includes(word.toLowerCase());
+}

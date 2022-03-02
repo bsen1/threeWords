@@ -88,6 +88,8 @@ button:active {
 }
 
 .share, .share:hover, .share:active {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Outfit', sans-serif;
     background-color: green;
     color: rgb(240,240,240);
     border-radius: .75rem;
