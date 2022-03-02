@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log(word1String, word2String, word3String)
 
-        if(validWords.includes(word1String.toLowerCase) && validWords.includes(word2String.toLowerCase) && validWords.includes(word3String.toLowerCase))
+        if(validWords.includes(word1String.toLowerCase()) && validWords.includes(word2String.toLowerCase()) && validWords.includes(word3String.toLowerCase()))
             allWordsValid = true;
 
         if (answer.includes(word1String) || anagrams(word1String) || allWordsValid) {
