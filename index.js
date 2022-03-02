@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for(let i = 0; i < word1.length; i++) {
             word1String += word1[i].innerHTML;
         }
+        
 
         let word2String = "";
         for(let i = 0; i < word2.length; i++) {
@@ -85,6 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
         for(let i = 0; i < word3.length; i++) {
             word3String += word3[i].innerHTML;
         }
+
+        console.log(word1String, word2String, word3String)
 
         if(validWords.includes(word1String.toLowerCase) && validWords.includes(word2String.toLowerCase) && validWords.includes(word3String.toLowerCase))
             allWordsValid = true;
