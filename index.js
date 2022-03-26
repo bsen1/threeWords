@@ -57,9 +57,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 0; i < wordlets.length; i++) {
         wordlets[i].onclick = () => {
+            
+            if (wordlets[i].innerHTML != "") {
+                for (let j = 0; j < letters.length; j++) {
+                    if(letters[j].innerHTML === "") {
+                        letters[j].innerHTML = wordlets[i].innerHTML;
+                        wordlets[i].innerHTML = "";
+                    }
+                }
+
+            }
+
+            else {
             let temp = document.querySelector(".selected").innerHTML;
             document.querySelector(".selected").innerHTML = wordlets[i].innerHTML;
             wordlets[i].innerHTML = temp;
+            }
         }
     }
 
