@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".info").onclick = () => {
-          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*Use the share button to challenge your friends!<br>Made by Brian Sen (briansen142@gmail.com)</span>"
+          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*Use the share button to challenge your friends!<br><br>Made by Brian Sen (briansen142@gmail.com)</span>"
           modal.style.display = "block";
       }
     
