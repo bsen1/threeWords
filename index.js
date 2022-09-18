@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < wordlets.length; i++) {
         wordlets[i].onclick = () => {
             
+
+            //If clicked on non-blank wordlet, put wordlet back into first open letter spot
             if (wordlets[i].innerHTML != "") {
                 for (let j = 0; j < letters.length; j++) {
                     if(letters[j].innerHTML === "") {
@@ -186,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector(".info").onclick = () => {
-          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*Use the share button to challenge your friends!</span>"
+          document.getElementById("modalInfo").innerHTML = "Fill in the blanks using the given letters to make three words.<br><br><span class='mini'>*Use the share button to challenge your friends!<br>Made by Brian Sen (briansen142@gmail.com)</span>"
           modal.style.display = "block";
       }
     
