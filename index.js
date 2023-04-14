@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
             else
                 document.getElementById("modalInfo").innerHTML = `Word 1: ${w1}<br>Word 2: ${w2}<br>Word 3: ${w3}<br>Completed in ${checks} checks<br>You can do better. 🤷‍♂️`;
             document.getElementById("title1").classList.add("wonGame");
-            document.getElementById("title1").innerHTML = "Play Again";
+            document.getElementById("title1").innerHTML = `Play Again`;
             document.querySelector("#submit").disabled = true;
         }
         else
